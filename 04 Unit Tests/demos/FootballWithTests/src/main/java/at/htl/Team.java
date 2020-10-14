@@ -32,7 +32,8 @@ public class Team implements Comparable<Team>{
         if (this.getPoints() != other.getPoints()) {
             return other.getPoints() - this.getPoints();
         } else if (this.getGoalDifference() != other.getGoalDifference()) {
-            return other.getGoalDifference() - this.getGoalDifference();
+            return Integer.compare(other.getGoalDifference(), this.getGoalDifference());
+            // return other.getGoalDifference() - this.getGoalDifference();
         } else if (this.getGoalsShot() != other.getGoalsShot()) {
             return other.getGoalsShot() - this.getGoalsShot();
         } else {

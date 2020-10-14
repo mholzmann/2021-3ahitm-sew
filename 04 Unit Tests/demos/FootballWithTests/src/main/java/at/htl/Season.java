@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Season {
 
-    protected List<Team> teams = new LinkedList<>();
+    private List<Team> teams = new LinkedList<>();
 
     public void addMatch(Match match) {
         Team homeTeam = findOrCreateTeam(match.getHomeName());
@@ -25,6 +25,10 @@ public class Season {
         Team newTeam = new Team(name);
         teams.add(newTeam);
         return newTeam;
+    }
+
+    protected List<Team> getTeams() {
+        return Collections.unmodifiableList(teams);
     }
 
     public List<Team> getTeamsSortedByRank() {

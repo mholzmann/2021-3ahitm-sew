@@ -122,4 +122,24 @@ class TeamTest {
 
         assertThat(team.compareTo(other)).isEqualTo(0);
     }
+
+    @Test
+    @Order(110)
+    /**
+     * fails in this edge case (Integer.MAX_VALUE) because of a bug in Team.compareTo()
+     * bug details: overflow at other.getGoalDifference() - this.getGoalDifference()
+     * bug fix:
+     *   - avoid the "subtraction trick"
+     *   - instead use Integer.compare(other.getGoalDifference(), this.getGoalDifference())
+     */
+    void compareTo_OtherWithEqualPointsButBiggerGoalDifference_ReturnsNumberBiggerThanZero() {
+        Team team = new Team("A-Team");
+        team.addMatchResult(3, 1, 0);
+        team.addMatchResult(0, 0, 2);
+
+        Team other = new Team("B-Team");
+        other.addMatchResult(3, Integer.MAX_VALUE, 0);
+
+        assertThat(team.compareTo(other)).isGreaterThan(0);
+    }
 }

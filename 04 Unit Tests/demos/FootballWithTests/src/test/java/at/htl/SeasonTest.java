@@ -22,8 +22,8 @@ class SeasonTest {
         // passes only if you override Team.equals()
         // assertThat(season.teams).containsExactlyInAnyOrder(new Team("A"), new Team("B"));
 
-        // uses with reflection
-        assertThat(season.teams).extracting("name").containsExactlyInAnyOrder("A", "B");
+        // uses reflection
+        assertThat(season.getTeams()).extracting("name").containsExactlyInAnyOrder("A", "B");
     }
 
     @Test
@@ -71,7 +71,7 @@ class SeasonTest {
     }
 
     private Team getTeam(String teamName) {
-        for (Team team : season.teams) {
+        for (Team team : season.getTeams()) {
             if (team.getName().equals(teamName)) {
                 return team;
             }
