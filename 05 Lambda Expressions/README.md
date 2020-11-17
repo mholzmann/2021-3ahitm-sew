@@ -28,7 +28,7 @@ A functional interface has a single abstract method.
 
 Method references are syntactic sugar for lambda expressions, for example:
 
-- `String::toUpperCase()` is a shortcut for `(str) -> str.toUpperCase()`
+- `String::toUpperCase` is a shortcut for `(str) -> str.toUpperCase()`
 - `String::compare` is a shortcut for `(str1, str2) -> String.compare(str1, str2)`
 
 ## Further reading
