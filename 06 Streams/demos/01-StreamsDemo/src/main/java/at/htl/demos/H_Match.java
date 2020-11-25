@@ -4,7 +4,7 @@ import at.htl.model.Movie;
 
 import java.util.List;
 
-public class G_Match {
+public class H_Match {
     public static void main(String[] args) {
         List<Movie> movies = List.of(
                 new Movie("a", 10),
@@ -12,17 +12,17 @@ public class G_Match {
                 new Movie("c", 15)
         );
 
-        // checks whether any element matches the given predicate
+        // Check whether any element has more than 10 likes
         boolean anyMatch = movies.stream()
                 .anyMatch(movie -> movie.getLikes() > 10);
         System.out.println(anyMatch);
 
-        // checks whether all elements match the given predicate
+        // Check whether all elements have more than 10 likes
         boolean allMatch = movies.stream()
                 .allMatch(movie -> movie.getLikes() > 10);
         System.out.println(allMatch);
 
-        // checks whether no element matches the given predicate
+        // Check whether no element has more than 10 likes
         boolean noneMatch = movies.stream()
                 .noneMatch(movie -> movie.getLikes() > 10);
         System.out.println(noneMatch);

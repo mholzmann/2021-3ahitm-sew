@@ -13,13 +13,16 @@ public class C_Map {
                 new Movie("c", 15)
         );
 
+        // Print the titles of all movies with more than 10 likes
         movies.stream()
                 .filter(movie -> movie.getLikes() > 10)
                 .map(Movie::getTitle)
                 .forEach(System.out::println);
 
+        System.out.println();
+
+        // Print all likes
         movies.stream()
-                .filter(movie -> movie.getLikes() > 10)
                 .mapToInt(Movie::getLikes)
                 .forEach(System.out::println);
     }

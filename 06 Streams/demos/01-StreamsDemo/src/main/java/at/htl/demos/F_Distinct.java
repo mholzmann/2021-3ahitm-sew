@@ -15,6 +15,7 @@ public class F_Distinct {
                 new Movie("b", 20)
         );
 
+        // Print all movie titles, but each title just once
         movies.stream()
                 .map(Movie::getTitle)
                 .distinct()

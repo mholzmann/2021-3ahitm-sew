@@ -14,11 +14,14 @@ public class B_Filter {
                 new Movie("c", 15)
         );
 
+        // Count all movies with less than 15 likes
         long count = movies.stream()
                 .filter(movie -> movie.getLikes() < 15)
                 .count();
+
         System.out.println(count);
 
+        // Print the titles of all movies with more than 10 likes
         Predicate<Movie> isPopular = movie -> movie.getLikes() > 10;
         movies.stream()
                 .filter(isPopular)

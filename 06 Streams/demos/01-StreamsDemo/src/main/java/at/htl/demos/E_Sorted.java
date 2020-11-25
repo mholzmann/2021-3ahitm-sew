@@ -13,11 +13,10 @@ public class E_Sorted {
                 new Movie("c", 15)
         );
 
+        // Print all movie titles sorted by likes (in descending order)
         movies.stream()
                 .sorted(Comparator.comparingInt(Movie::getLikes).reversed())
                 .map(Movie::getTitle)
                 .forEach(System.out::println);
-
-        System.out.println();
     }
 }

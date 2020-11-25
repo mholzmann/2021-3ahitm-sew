@@ -3,6 +3,8 @@ package at.htl.demos;
 import at.htl.model.Movie;
 
 import java.util.List;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class D_Skip_Limit {
 
@@ -16,17 +18,17 @@ public class D_Skip_Limit {
                 new Movie("f", 5)
         );
 
+        // Print second, third and fourth movie
         movies.stream()
                 .skip(1)
                 .limit(3)
-                .map(Movie::getTitle)
                 .forEach(System.out::println);
 
         System.out.println();
 
-        movies.stream()
-                .takeWhile(movie -> movie.getLikes() < 25)
-                .map(Movie::getTitle)
+        // Print all movies, except the third one
+        Stream.concat(movies.stream().limit(2),
+                      movies.stream().skip(3))
                 .forEach(System.out::println);
     }
 }

@@ -2,12 +2,11 @@ package at.htl.demos;
 
 import at.htl.model.Movie;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class K_Collect {
+public class L_Collect {
     public static void main(String[] args) {
         List<Movie> movies = List.of(
                 new Movie("a", 10),
@@ -15,14 +14,17 @@ public class K_Collect {
                 new Movie("c", 15)
         );
 
+        // Get a list of all movies with more than 10 likes
         List<Movie> list = movies.stream()
                 .filter(movie -> movie.getLikes() > 10)
                 .collect(Collectors.toList());
 
+        // Get an unmodifiable list of all movies with more than 10 likes
         List<Movie> unmodifiableList = movies.stream()
                 .filter(movie -> movie.getLikes() > 10)
                 .collect(Collectors.toUnmodifiableList());
 
+        // Get a set of all movies with more than 10 likes
         Set<Movie> set = movies.stream()
                 .filter(movie -> movie.getLikes() > 10)
                 .collect(Collectors.toSet());

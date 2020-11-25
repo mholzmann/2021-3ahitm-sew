@@ -4,7 +4,7 @@ import at.htl.model.Movie;
 
 import java.util.List;
 
-public class F_Peek {
+public class G_Peek {
     public static void main(String[] args) {
         List<Movie> movies = List.of(
                 new Movie("a", 10),
@@ -12,8 +12,10 @@ public class F_Peek {
                 new Movie("c", 15)
         );
 
-        // peek() is an intermediate operation (returns a stream)
-        // foreach() is a terminal operation
+        // Use peek(), to visualize the elements as they flow past a certain point in the pipeline
+        // The main difference between peek() and foreach() is:
+        //   - peek() is an intermediate operation (returns a stream)
+        //   - foreach() is a terminal operation
         movies.stream()
                 .peek(movie -> System.out.println("piped: " + movie))
                 .filter(movie -> movie.getLikes() < 20)
