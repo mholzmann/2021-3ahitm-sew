@@ -3,5 +3,5 @@
 This repo contains the course material:
 
 - (short) introductions
-- demos
+- lots of demos
 - links for further reading
