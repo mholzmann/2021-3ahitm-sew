@@ -2,6 +2,6 @@
 
 This repo contains the course material:
 
-- presentations
+- (short) introductions
 - demos
-- assignments (+ solutions)
+- links for further reading
