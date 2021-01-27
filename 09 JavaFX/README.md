@@ -62,9 +62,9 @@ Event types are hierarchical. Every event type has a name and a super type. For 
 
 ### Event Handling
 
-Event handling is provided by **event filters** and **event handlers**, which are implementations of the `EventHandler` interface.
+Event handling is provided by **event filters** and **event handlers**, which are implementations of the `EventHandler` interface. The filters are executed in the *event capturing phase*, the handlers in the *event bubbling phase*.
 
-- First the **event filters**, which are registered at the `Stage`, are exectued. When those filters complete, the event is passed to the `Scene`, and then to the next node(s), until it finally arrives at the target node (e.g. `Button`).
+- First the **event filters**, which are registered at the `Stage`, are executed. When those filters complete, the event is passed to the filters of the `Scene`, then to those of the root node, and so on, until it finally arrives at the target node (e.g. `Button`).
 - After the event target is reached and all registered filters have processed the event, the **event handlers** are executed, beginning with those registered at the target node (e.g. `Button`) and ending with those registered at the `Stage`.
 
 An event can be **consumed** by an event filter or an event handler in the described chain by calling the `consume()` method. This method signals that processing of the event is complete and no further filters and handlers are executed.
