@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.htl.binding.gui.controllers.MyCarsController">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <right>
+      <VBox prefHeight="390.0" prefWidth="205.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Separator prefWidth="200.0" />
+            <TextField fx:id="modelTextField" promptText="Model" />
+            <ComboBox fx:id="makerComboBox" prefHeight="25.0" prefWidth="193.0" promptText="Maker" />
+            <DatePicker fx:id="registrationDatePicker" prefHeight="25.0" prefWidth="197.0" promptText="Registration Date" />
+            <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="170.0" spacing="5.0">
+               <children>
+                  <Label text="Constructed in" />
+                  <Spinner fx:id="creationYearSpinner" editable="true" prefHeight="25.0" prefWidth="112.0" />
+               </children>
+            </HBox>
+            <CheckBox fx:id="electricCheckBox" mnemonicParsing="false" text="Electric" />
+            <HBox alignment="TOP_RIGHT" prefHeight="4.0" prefWidth="195.0">
+               <children>
+                  <Button fx:id="addButton" mnemonicParsing="false" text="Add" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding></VBox>
+   </right>
+   <top>
+      <Label text="My Cars" BorderPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <ListView fx:id="carsListView" prefHeight="407.0" prefWidth="360.0" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <HBox prefHeight="0.0" prefWidth="620.0" spacing="40.0" BorderPane.alignment="CENTER">
+         <children>
+            <CheckBox fx:id="firstCheckBox" mnemonicParsing="false" text="First" />
+            <CheckBox fx:id="firstHalfCheckBox" mnemonicParsing="false" text="1st Half" />
+            <CheckBox fx:id="secondHalfCheckBox" mnemonicParsing="false" text="2nd Half" />
+            <CheckBox fx:id="lastCheckBox" mnemonicParsing="false" text="Last" />
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </HBox>
+   </bottom>
+</BorderPane>
